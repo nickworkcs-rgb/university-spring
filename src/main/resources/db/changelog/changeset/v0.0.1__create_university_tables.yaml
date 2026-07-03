@@ -47,7 +47,7 @@ databaseChangeLog:
                     nullable: false
                     foreignKeyName: fk_students_faculty
                     referencedTableName: faculties
-                    referencedColumnNames : id
+                    referencedColumnNames: id
         - createTable:
             tableName: books
             columns:
@@ -75,7 +75,7 @@ databaseChangeLog:
                     nullable: true
                     foreignKeyName: fk_book_student
                     referencedTableName: students
-                    referencedColumnNames: "id"
+                    referencedColumnNames: id
 
 
 
