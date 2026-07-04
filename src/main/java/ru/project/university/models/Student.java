@@ -12,7 +12,6 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-@EqualsAndHashCode(exclude = {"faculty", "books"})
 @ToString(exclude = {"faculty", "books"})
 public class Student {
 
@@ -47,6 +46,18 @@ public class Student {
     public void removeBook(Book book) {
         books.remove(book);
         book.setStudent(null);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student student)) return false;
+        return id != null && id.equals(student.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
     }
 
 }
